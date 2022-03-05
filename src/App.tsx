@@ -6,7 +6,7 @@ import {NewComponent} from "./NewComponent";
 import {Button} from "./Button";
 import {FilterComponent} from "./FilterComponent";
 
-type FilterType = "All" | "RUBLS" | "Dollars" ;
+export type FilterType = "All" | "RUBLS" | "Dollars" ;
 
 function App() {
     const topCars = [
@@ -57,22 +57,8 @@ function App() {
 
     return (
         <div className="App">
-                <FilterComponent currentMoney={currentMoney} callback={() => filterHandler(filter)}/>
-            {/*<div>
-                <ul>
-                    {currentMoney.map((objMoney, index: number) => {
-                        return (
-                            <li key={index + 1}>
-                                <span>{index + 1} banknota : {objMoney.banknots} value: {objMoney.value} number: {objMoney.number}</span>
-                            </li>
-                        )
-                    })}
-                </ul>
-                <button onClick={() => filterHandler("All")}>All Money</button>
-                <button onClick={() => filterHandler("RUBLS")}>RUBLS</button>
-                <button onClick={() => filterHandler("Dollars")}>Dollars</button>
+                <FilterComponent currentMoney={currentMoney} filterHandler={filterHandler}/>
 
-            </div>*/}
             <div>
                 <hr/>
                 <h1>{num}</h1>
@@ -85,8 +71,8 @@ function App() {
             <hr/>
             <NewComponent topCars={topCars}/>
             <div>
-                <Button name={1} callback={() => Handler1("I am button №", 1)}/>
-                <Button name={2} callback={() => Handler2("I am button №", 2)}/>
+                <Button name={"one"} callback={() => Handler1("I am button №", 1)}/>
+                <Button name={"two"} callback={() => Handler2("I am button №", 2)}/>
             </div>
         </div>
     )

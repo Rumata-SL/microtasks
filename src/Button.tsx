@@ -1,7 +1,7 @@
 import React from "react";
 
 type PropsTypeButton = {
-    name: number
+    name: string
     callback: () => void
 
 }

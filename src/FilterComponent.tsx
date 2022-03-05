@@ -1,20 +1,21 @@
 import React from "react";
+import {FilterType} from "./App";
+import {Button} from "./Button";
 
-type PropsTypeFilterComponent = {
-    currentMoney:Array<MoneyType>
-    callback: ()=>void
-}
-type MoneyType={
+type MoneyType = {
     banknots: string,
     value: number,
     number: string
 }
+type PropsTypeFilterComponent = {
+    currentMoney: Array<MoneyType>
+    filterHandler: (name: FilterType) => void
+}
 
-export function FilterComponent(props:PropsTypeFilterComponent){
-    const filterHendlerProps =()=>{
-        props.callback()
-    }
-    return(
+
+export function FilterComponent(props: PropsTypeFilterComponent) {
+
+    return (
         <div>
             <ul>
                 {props.currentMoney.map((objMoney, index: number) => {
@@ -25,9 +26,12 @@ export function FilterComponent(props:PropsTypeFilterComponent){
                     )
                 })}
             </ul>
-            <button onClick={filterHendlerProps}>All Money</button>
-            <button onClick={filterHendlerProps}>RUBLS</button>
-            <button onClick={filterHendlerProps}>Dollars</button>
+            <Button name={"All"} callback={() => props.filterHandler("All")}/>
+            <Button name={"RUBLS"} callback={() => props.filterHandler("RUBLS")}/>
+            <Button name={"Dollars"} callback={() => props.filterHandler("Dollars")}/>
+            {/*<button onClick={()=>filterHendlerProps("All")}>All Money</button>
+            <button onClick={()=>filterHendlerProps("RUBLS")}>RUBLS</button>
+            <button onClick={()=>filterHendlerProps("Dollars")}>Dollars</button>*/}
 
         </div>
     )

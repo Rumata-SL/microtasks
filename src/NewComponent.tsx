@@ -30,7 +30,7 @@ export function NewComponent(props: PropsTypeNewComponent) {
             <div>{arr}</div>
             <hr/>
             <div>
-                <Button name={3} callback={() => buttonHand("I am button №", 3)}/>
+                <Button name={"three"} callback={() => buttonHand("I am button №", 3)}/>
             </div>
             <hr/>
         </div>

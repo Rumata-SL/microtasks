@@ -29,10 +29,6 @@ export function FilterComponent(props: PropsTypeFilterComponent) {
             <Button name={"All"} callback={() => props.filterHandler("All")}/>
             <Button name={"RUBLS"} callback={() => props.filterHandler("RUBLS")}/>
             <Button name={"Dollars"} callback={() => props.filterHandler("Dollars")}/>
-            {/*<button onClick={()=>filterHendlerProps("All")}>All Money</button>
-            <button onClick={()=>filterHendlerProps("RUBLS")}>RUBLS</button>
-            <button onClick={()=>filterHendlerProps("Dollars")}>Dollars</button>*/}
-
         </div>
     )
 }
